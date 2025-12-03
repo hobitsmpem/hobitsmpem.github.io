@@ -1,0 +1,30 @@
+[
+  {
+    "nama": "Ahmad Zaki",
+    "judul": "Lead Developer | React.js Expert",
+    "url_gambar": "https://picsum.photos/id/64/80/80", 
+    "url_sosial": "https://reactjs.org/",
+    "quote": "Code is my language."
+  },
+  {
+    "nama": "Citra Dewi",
+    "judul": "UI/UX Designer | Figma Specialist",
+    "url_gambar": "https://picsum.photos/id/1084/80/80", 
+    "url_sosial": "https://www.figma.com/",
+    "quote": "Design to simplify life."
+  },
+  {
+    "nama": "Bagus Satrio",
+    "judul": "Data Scientist | Python & ML",
+    "url_gambar": "https://picsum.photos/id/60/80/80", 
+    "url_sosial": "https://www.python.org/",
+    "quote": "Finding patterns in chaos."
+  },
+  {
+    "nama": "Dina Pratiwi",
+    "judul": "Cyber Security Analyst",
+    "url_gambar": "https://picsum.photos/id/35/80/80", 
+    "url_sosial": "https://security.google/",
+    "quote": "Protecting the digital world."
+  }
+]
