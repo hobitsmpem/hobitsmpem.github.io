@@ -5,23 +5,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HOB IT Mangunan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* 1. Aturan Dasar & Font Modern */
+    :root {
+      --primary-color: #6A5ACD; /* Biru Ungu (Trendy) */
+      --secondary-color: #FF69B4; /* Hot Pink (Aksen Enerjik) */
+      --text-dark: #333333;
+      --bg-light: #F4F7F8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* 2. Header Stylish (Logo & Menu) */
+    header {
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .menu {
+      /* Gaya untuk menu, bisa diubah ke list/link nyata */
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* 3. Main Content dengan Desain Card */
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 15px; /* Sudut membulat */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Bayangan modern */
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.5em;
+      font-weight: 800;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--secondary-color); /* Aksen garis */
+      padding-left: 15px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+
+    /* 4. Footer Minimalis */
+    footer {
+      background-color: var(--text-dark);
+      color: var(--bg-light);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+
+    /* Efek Interaktif Sederhana (Hover) */
+    header:hover {
+        opacity: 0.9;
+    }
+
+  </style>
 </head>
 
 <body>
   <header>
-    logo goes here
-    menu goes here
+    <div class="logo">HOB IT</div>
+    <div class="menu">
+      [HOME] [ABOUT] [CONTACT]
+    </div>
   </header>
   <main>
     <h1>
-      page title goes here
+      Page Title Goes Here: The Next Level
     </h1>
     <p>
-      content goes here
+      Content goes here. Ini adalah contoh konten yang menggunakan gaya font Poppins yang modern dan bersih. Desain ini menggunakan warna Biru Ungu dan Hot Pink sebagai aksen untuk memberikan kesan dinamis dan energik yang disukai anak muda. Perhatikan penggunaan *box-shadow* dan *border-radius* yang membuat elemen terlihat lebih "pop" di layar!
+    </p>
+    <p>
+      Cobalah ganti teks di `h1` dan `p` dengan konten yang lebih menarik dan tambahkan lebih banyak elemen seperti tombol, gambar, atau kartu.
     </p>
   </main>
-  <footwr>
-    footer goes here
-  </footwr>
+  <footer>
+    &copy; 2025 HOB IT Mangunan. All Rights Reserved.
+  </footer>
 </body>
 </html>
