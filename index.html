@@ -460,7 +460,7 @@
 
                     // 2. IMAGE SLIDER: Extract screenshots and Render
                     // Filter out any projects that might be missing a screenshot URL
-                    projectScreenshots = projects.map(p => p.screenshot).filter(src => src).slice(0, 5); // Limit to 5 slides
+                    projectScreenshots = projects.map(p => p.screenshot);//.filter(src => src).slice(0, 5); // Limit to 5 slides
                     
                     let sliderHTML = '';
                     let dotsHTML = '';
