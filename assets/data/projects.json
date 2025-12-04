@@ -2,7 +2,7 @@
   {
     "name": "HOB IT 2025",
     "description": "Website profil pribadi",
-    "creator_name": "Hayden",
+    "creator_name": "Hayden (7 Nusa 3)",
     "avatar": "assets/img/avatar/hayden.jpeg",
     "screenshot": "assets/img/screen/hayden.png",
     "github_url": "https://github.com/asmurufhayden-alt",
@@ -10,29 +10,155 @@
   },
   {
     "name": "HOB IT 2025",
+    "description": "Situs permainan hockey lapangan",
+    "creator_name": "Carolus (8 Bangsa 2)",
+    "avatar": "assets/img/avatar/carolus.jpeg",
+    "screenshot": "assets/img/screen/",
+    "github_url": "https://github.com/caroluscatholica-ux/caroluscatholica-ux.github.io/",
+    "product_url": "https://caroluscatholica-ux.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Game Perang antar pesawat",
+    "creator_name": "Bona (8 Bangsa 1)",
+    "avatar": "assets/img/avatar/bona.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/blackwolfnich-netizen/blackwolfnich-netizen.github.io/",
+    "product_url": "https://blackwolfnich-netizen.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Portofolio pribadi, style minimalis",
+    "creator_name": "Agha (7 Nusa 3)",
+    "avatar": "assets/img/avatar/agha.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/banyuagha-commits/banyuagha-commits.github.io/",
+    "product_url": "https://banyuagha-commits.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Web tentang Portofolio saya dengan tema Jurrasic Park di Ingen",
+    "creator_name": "Yovan (7 Nusa 1)",
+    "avatar": "assets/img/avatar/yovan.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/yovanmangunan/yovanmangunan.github.io/",
+    "product_url": "https://yovanmangunan.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Portofolio yang di hiasi dengan tema dinosaurus ",
+    "creator_name": "Biru (7 Nusa 2)",
+    "avatar": "assets/img/avatar/biru.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/finzoreo-crypto/finzoreo-crypto.github.io/",
+    "product_url": "https://finzoreo-crypto.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Suatu website, yang isinya untuk sekarang ada 7 gambar didalamnya.",
+    "creator_name": "Amata (9 Bhinneka 3)",
+    "avatar": "assets/img/avatar/amata.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/leleparfait/leleparfait.github.io/",
+    "product_url": "https://leleparfait.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Saya membuat sebuah  web dengan bahasa html dan css yang berisikan portofolio diri saya yang menceritakan berbagai hobi saya dengan layout yang kreatif berwarna dan unik",
+    "creator_name": "Sekar (9 Bhinneka 1)",
+    "avatar": "assets/img/avatar/sekar.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/mtcsee/mtcsee.github.io",
+    "product_url": "https://mtcsee.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Situs informasi uranium dan guts and blackpowder",
+    "creator_name": "Ian (8 Bangsa 2)",
+    "avatar": "assets/img/avatar/ian.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/iansuryantoro12-spec/iansuryantoro12-spec.github.io",
+    "product_url": "https://iansuryantoro12-spec.github.io/Gut%20and%20Blackpowder/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "website yang berisi 3 game: batu gunting kertas, tic tac toe, dan whack a mole ",
+    "creator_name": "Miguel (8 Bangsa 3)",
+    "avatar": "assets/img/avatar/miguel.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/ryunsoketn/ryunsoketn.github.io/",
+    "product_url": "https://ryunsoketn.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Proyek ini merupakan hasil karya saya dari kelas IT",
+    "creator_name": "Arka (9 Bhinneka 3)",
+    "avatar": "assets/img/avatar/arka.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/arkananta-rk/arkananta-rk.github.io/",
+    "product_url": "https://arkananta-rk.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Website portfolio yang berisi proyek pribadi anti bullying dan laudato si",
+    "creator_name": "Lejar (9 Bhinneka 3)",
+    "avatar": "assets/img/avatar/lejar.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/lejar1/lejar1.github.io",
+    "product_url": "https://lejar1.github.io/proyekIT.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Website portofolio futuristik. ",
+    "creator_name": "Jenar (7 Nusa 3)",
+    "avatar": "assets/img/avatar/jenar.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/ironboku/ironboku.github.io/",
+    "product_url": "https://ironboku.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Saya membuat website mini  game menghindari balok",
+    "creator_name": "Daffa (8 Bangsa 1)",
+    "avatar": "assets/img/avatar/dafa.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/daffahendriosanusi-cmyk/daffahendriosanusi-cmyk.github.io/",
+    "product_url": "https://daffahendriosanusi-cmyk.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Membuat mini game bertema lari untuk menghindari tantangan dengan cara di tekan layar maka otomatis karakter akan lompat",
+    "creator_name": "Han (8 Bangsa 1)",
+    "avatar": "assets/img/avatar/han.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/johanvanseni/johanvanseni.github.io/",
+    "product_url": "https://johanvanseni.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Mini game seru dan menyenangkan",
+    "creator_name": "Arief (7 Nusa 1)",
+    "avatar": "assets/img/avatar/arif.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "https://github.com/ariefnanda/ariefnanda.github.io/",
+    "product_url": "https://ariefnanda.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "Sebuah web portofolio dengan tema pixel dengan mini games di dalamnya yang sangat menyenangkan",
+    "creator_name": "Vanko (7 Nusa 3)",
+    "avatar": "assets/img/avatar/vanko.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "",
+    "product_url": "https://vankoyutakaaa.lovable.app/"
+  },
+  {
+    "name": "HOB IT 2025",
     "description": "",
     "creator_name": "",
-    "avatar": "assets/img/avatar/",
-    "screenshot": "assets/img/screen/",
-    "github_url": "https://github.com/",
-    "product_url": "https://.github.io"
-  },
-  {
-    "name": "Space Hopper Game ??",
-    "description": "A 2D platformer game built with Python/Pygame. Navigate asteroids and collect stars!",
-    "creator_name": "Maya Singh (7th Grade)",
-    "avatar": "images/maya_avatar.jpg",
-    "screenshot": "images/space_hopper_screenshot.png",
-    "github_url": "https://github.com/mayasingh/space-hopper",
-    "product_url": "https://example.com/maya-space-hopper"
-  },
-  {
-    "name": "My Daily Planner App ???",
-    "description": "A simple to-do list web app that stores tasks locally in the browser.",
-    "creator_name": "Jamie Lee (9th Grade)",
-    "avatar": "images/jamie_avatar.jpg",
-    "screenshot": "images/planner_screenshot.png",
-    "github_url": "https://github.com/jamielee/planner",
-    "product_url": "https://example.com/jamie-planner"
+    "avatar": "assets/img/avatar/.jpeg",
+    "screenshot": "assets/img/screen/.png",
+    "github_url": "",
+    "product_url": ""
   }
 ]
