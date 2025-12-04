@@ -1,0 +1,38 @@
+[
+  {
+    "name": "HOB IT 2025",
+    "description": "Website profil pribadi",
+    "creator_name": "Hayden",
+    "avatar": "assets/img/avatar/hayden.jpeg",
+    "screenshot": "assets/img/screen/hayden.png",
+    "github_url": "https://github.com/asmurufhayden-alt",
+    "product_url": "https://asmurufhayden-alt.github.io/"
+  },
+  {
+    "name": "HOB IT 2025",
+    "description": "",
+    "creator_name": "",
+    "avatar": "assets/img/avatar/",
+    "screenshot": "assets/img/screen/",
+    "github_url": "https://github.com/",
+    "product_url": "https://.github.io"
+  },
+  {
+    "name": "Space Hopper Game ??",
+    "description": "A 2D platformer game built with Python/Pygame. Navigate asteroids and collect stars!",
+    "creator_name": "Maya Singh (7th Grade)",
+    "avatar": "images/maya_avatar.jpg",
+    "screenshot": "images/space_hopper_screenshot.png",
+    "github_url": "https://github.com/mayasingh/space-hopper",
+    "product_url": "https://example.com/maya-space-hopper"
+  },
+  {
+    "name": "My Daily Planner App ???",
+    "description": "A simple to-do list web app that stores tasks locally in the browser.",
+    "creator_name": "Jamie Lee (9th Grade)",
+    "avatar": "images/jamie_avatar.jpg",
+    "screenshot": "images/planner_screenshot.png",
+    "github_url": "https://github.com/jamielee/planner",
+    "product_url": "https://example.com/jamie-planner"
+  }
+]
