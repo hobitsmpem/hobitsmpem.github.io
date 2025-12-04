@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Eco Explorers Website ??",
+    "description": "A responsive informational site about local endangered species, featuring interactive maps.",
+    "creator_name": "Alex Chen (8th Grade)",
+    "avatar": "images/alex_avatar.jpg",
+    "screenshot": "images/eco_explorers_screenshot.png",
+    "github_url": "https://github.com/alexchen/eco-explorers",
+    "product_url": "https://example.com/alex-eco-explorers"
+  },
+  {
+    "name": "Space Hopper Game ??",
+    "description": "A 2D platformer game built with Python/Pygame. Navigate asteroids and collect stars!",
+    "creator_name": "Maya Singh (7th Grade)",
+    "avatar": "images/maya_avatar.jpg",
+    "screenshot": "images/space_hopper_screenshot.png",
+    "github_url": "https://github.com/mayasingh/space-hopper",
+    "product_url": "https://example.com/maya-space-hopper"
+  },
+  {
+    "name": "My Daily Planner App ???",
+    "description": "A simple to-do list web app that stores tasks locally in the browser.",
+    "creator_name": "Jamie Lee (9th Grade)",
+    "avatar": "images/jamie_avatar.jpg",
+    "screenshot": "images/planner_screenshot.png",
+    "github_url": "https://github.com/jamielee/planner",
+    "product_url": "https://example.com/jamie-planner"
+  }
+]
