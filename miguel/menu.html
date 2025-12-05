@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            /* Background Utama */
+            background-color: #34495e; 
+            color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            
+            /* Mengatur lebar maksimum untuk konten (seperti bekas .menu-container) */
+            padding: 40px;
+            width: 90%;
+            max-width: 400px; 
+            margin: 0 auto; /* Tengah di layar besar */
+        }
+        
+        /* Tombol dan Judul sekarang langsung menjadi anak dari body */
+        h1 {
+            color: #2ecc71; 
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center; /* Pastikan judul rata tengah */
+            width: 100%; /* Pastikan elemen block */
+            
+            /* Terapkan Animasi */
+            animation: rotate-swing 4s ease-in-out infinite alternate;
+            transform-origin: bottom center; 
+        }
+
+        /* --- KEYFRAMES UNTUK ANIMASI ROTASI DAN AYUNAN --- */
+        @keyframes rotate-swing {
+            0% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+            100% {
+                transform: translateX(5px) rotate(5deg);
+            }
+        }
+        
+        .menu-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            /* Background tombol (sekarang menjadi kontras dengan background body) */
+            background-color: #2c3e50; /* Warna yang tadinya milik .menu-container */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .menu-button:hover {
+            background-color: #5d6d7e; 
+            transform: translateY(-2px);
+        }
+
+        /* Warna khusus untuk tombol tertentu */
+        .games-btn { background-color: #e67e22; } /* Oranye */
+        .games-btn:hover { background-color: #d35400; }
+
+        .about-btn { background-color: #9b59b6; } /* Ungu */
+        .about-btn:hover { background-color: #8e44ad; }
+    </style>
+</head>
+<body>
+    <h1>🎮 App Game Seru</h1>
+    
+    <a href="games.html" class="menu-button games-btn">Daftar Game</a>
+    
+    <a href="about.html" class="menu-button about-btn">ℹ️ Tentang</a>
+        
+</body>
+</html>

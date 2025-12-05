@@ -1,0 +1,133 @@
+/* --- GAYA DASAR --- */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #34495e; 
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative; 
+}
+
+h1 {
+    color: #9b59b6; 
+    margin-bottom: 20px;
+}
+
+#score-time-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score { color: #2ecc71; } 
+.time { color: #f1c40f; } 
+
+/* --- GAYA BOARD (Papan Game) --- */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Grid 3x3 */
+    grid-gap: 15px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+    background-color: #8e44ad; 
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.mole-hole {
+    background-color: #34495e; 
+    height: 120px;
+    border-radius: 50%; 
+    position: relative;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.mole {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    transition: top 0.2s ease-out; 
+    cursor: pointer;
+    pointer-events: none; 
+}
+
+.mole.up {
+    top: 0; 
+    pointer-events: auto; 
+}
+
+.mole.hit {
+    font-size: 2em; 
+    opacity: 0.5;
+    transition: all 0.1s;
+}
+
+/* --- Tombol dan Pesan --- */
+#start-button, #restart-button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 15px;
+}
+
+#start-button:hover, #restart-button:hover {
+    background-color: #27ae60;
+}
+
+#game-message {
+    color: #f1c40f;
+    font-weight: bold;
+    min-height: 20px;
+    margin-bottom: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+/* --- Tombol Kembali --- */
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #95a5a6; 
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.2s;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.back-button:hover {
+    background-color: #7f8c8d;
+}

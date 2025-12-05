@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Game</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #3498db; 
+            color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .game-list-container {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+        }
+        h2 {
+            /* Warna teks header */
+            color: #2ecc71; 
+            margin-bottom: 30px;
+            
+            /* Gaya Background Khusus untuk Judul */
+            background-color: #1f3044; /* Sama dengan .game-item */
+            padding: 10px 20px; 
+            border-radius: 8px; 
+            width: fit-content; 
+            margin-left: auto; 
+            margin-right: auto; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* --- STYLING GRID --- */
+        .game-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .game-item {
+            background: #1f3044; /* Latar belakang item default */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none; 
+            color: #ecf0f1;
+            display: block;
+        }
+
+        .game-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            height: 100px;
+            background-color: #34495e; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Gaya Khusus Thumbnail */
+        .rps-thumbnail { background-color: #e74c3c; } 
+        .tictactoe-thumbnail { background-color: #f1c40f; color: #2c3e50;} 
+        
+        /* Gaya Whack-a-Mole (WAM) */
+        .mole-thumbnail { background-color: #9b59b6; } /* Tetap Ungu */
+        .mole-info { background-color: #1f3044; } /* DIUBAH menjadi abu-abu gelap default */
+
+        .game-info {
+            padding: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        /* --- GAYA TOMBOL KEMBALI --- */
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #95a5a6; 
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: background-color 0.2s;
+        }
+        .back-button:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-list-container">
+        <h2>Pilih Game</h2>
+        
+        <div class="game-grid">
+            
+            <a href="rock-paper-scissors.html" class="game-item">
+                <div class="game-thumbnail rps-thumbnail">
+                    💀 RPS CORRUPTED 
+                </div>
+                <div class="game-info">
+                    Gunting Batu Kertas
+                </div>
+            </a>
+            
+            <a href="tic-tac-toe.html" class="game-item">
+                <div class="game-thumbnail tictactoe-thumbnail">
+                    ❌ TIC TAC TOE vs AI ⭕
+                </div>
+                <div class="game-info">
+                    Tic Tac Toe (Vs. AI)
+                </div>
+            </a>
+            
+            <a href="whack-a-mole.html" class="game-item">
+                <div class="game-thumbnail mole-thumbnail">
+                    🔨 PUKUL EMOJI
+                </div>
+                <div class="game-info mole-info">
+                    Whack-an-Emoji Game
+                </div>
+            </a>
+            
+        </div>
+        
+        <a href="menu.html" class="back-button">↩️ Kembali ke Menu Utama</a>
+    </div>
+</body>
+</html>

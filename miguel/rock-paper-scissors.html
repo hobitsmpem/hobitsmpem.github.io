@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunting Batu Kertas - Corrupted Edition</title>
+    <link rel="stylesheet" href="rps-styles.css"> 
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Gunting Batu Kertas</h1>
+        
+        <div class="score-board">
+            <p>Skor Anda: <span id="user-score">0</span></p>
+            <p>Skor Komputer: <span id="computer-score">0</span></p>
+        </div>
+
+        <p class="message" id="message">Pilih salah satu di bawah ini!</p>
+
+        <div class="choices">
+            <div id="r" class="choice-container"><button id="rock" class="choice">✊ Batu</button></div>
+            <div id="p" class="choice-container"><button id="paper" class="choice">✋ Kertas</button></div>
+            <div id="s" class="choice-container"><button id="scissors" class="choice">✌️ Gunting</button></div>
+        </div>
+        
+        <button id="reset-game-button" class="back-to-menu-button hide">Mulai Game Baru</button> 
+        
+        <a href="games.html" class="back-to-menu-button">↩️ Kembali ke Daftar Game</a>
+    </div>
+
+    <div id="jumpscare-container" class="jumpscare">
+        <img src="Jumpscare.jpeg" alt="Jumpscare Warning" class="jumpscare-image">
+    </div>
+
+    <audio id="jumpscare-audio" src="Jumpscare-Audio.mp3" preload="auto"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script src="rps-script.js"></script>
+</body>
+</html>

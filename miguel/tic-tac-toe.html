@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - vs AI</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #3498db; 
+            color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+        }
+
+        h1 {
+            color: #f1c40f; 
+            margin-bottom: 10px;
+        }
+
+        #status {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #2ecc71;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 20px auto;
+            background-color: #34495e;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .cell {
+            background-color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: #2c3e50;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        
+        .cell:not(.win-cell):contains("X") { color: #e74c3c; } 
+        .cell:not(.win-cell):contains("O") { color: #3498db; } 
+
+        .cell:empty:hover {
+            background-color: #bdc3c7;
+        }
+
+        /* --- EFEK MENANG PULSE --- */
+        .cell.win-cell {
+            background-color: #e74c3c;
+            color: white;
+            animation: pulse 0.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { box-shadow: 0 0 5px #e74c3c; }
+            to { box-shadow: 0 0 20px #e74c3c; } 
+        }
+
+        /* --- PENTING UNTUK TOMBOL RESET --- */
+        #reset-button {
+            padding: 10px 20px;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.3s;
+            margin-bottom: 15px;
+        }
+
+        #reset-button:hover {
+            background-color: #f39c12;
+        }
+        
+        /* KELAS UNTUK MENGATUR TOMBOL: */
+        .hide {
+            display: none !important; /* Menyembunyikan tombol secara paksa */
+        }
+
+        .show {
+            display: inline-block; /* Menampilkan tombol */
+        }
+        /* --- AKHIR PENTING --- */
+
+
+        .back-to-menu-button {
+            display: block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #95a5a6; 
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+        }
+
+        .back-to-menu-button:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div id="status">Giliran X (Anda)</div>
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        
+        <button id="reset-button" class="hide">Main Lagi</button> 
+        <a href="games.html" class="back-to-menu-button">↩️ Kembali ke Daftar Game</a>
+    </div>
+
+    <script>
+        const board = document.getElementById('board');
+        const statusDisplay = document.getElementById('status');
+        const resetButton = document.getElementById('reset-button');
+        let gameActive = true;
+        let currentPlayer = 'X'; 
+        let gameState = ['', '', '', '', '', '', '', '', '']; 
+
+        const winningConditions = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        const CORNERS = [0, 2, 6, 8];
+        const CENTER = 4;
+        const ERROR_CHANCE = 0.20; 
+
+        function handleCellPlayed(clickedCell, clickedCellIndex) {
+            gameState[clickedCellIndex] = currentPlayer;
+            clickedCell.innerHTML = currentPlayer;
+        }
+
+        function handlePlayerChange() {
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            statusDisplay.innerHTML = `Giliran ${currentPlayer === 'X' ? 'X (Anda)' : 'O (AI)'}`;
+        }
+
+        function handleResultValidation() {
+            let roundWon = false;
+            let winCells = [];
+            
+            for (let i = 0; i < winningConditions.length; i++) {
+                const winCondition = winningConditions[i];
+                let a = gameState[winCondition[0]];
+                let b = gameState[winCondition[1]];
+                let c = gameState[winCondition[2]];
+
+                if (a === '' || b === '' || c === '') {
+                    continue;
+                }
+                if (a === b && b === c) {
+                    roundWon = true;
+                    winCells = winCondition;
+                    break;
+                }
+            }
+
+            if (roundWon) {
+                statusDisplay.innerHTML = `Pemain ${currentPlayer} Menang!`;
+                gameActive = false;
+                
+                // Menampilkan tombol reset
+                resetButton.classList.remove('hide'); 
+                resetButton.classList.add('show');
+                
+                if (currentPlayer === 'X' && typeof confetti === 'function') {
+                     confetti({
+                        particleCount: 100,
+                        spread: 120,
+                        origin: { y: 0.6 }
+                    });
+                }
+                
+                winCells.forEach(index => {
+                    document.querySelector(`[data-index="${index}"]`).classList.add('win-cell');
+                });
+                return true;
+            }
+
+            let roundDraw = !gameState.includes('');
+            if (roundDraw) {
+                statusDisplay.innerHTML = 'Seri!';
+                gameActive = false;
+                
+                // Menampilkan tombol reset
+                resetButton.classList.remove('hide'); 
+                resetButton.classList.add('show');
+                return true;
+            }
+
+            return false;
+        }
+
+        // --- LOGIKA AI (AI Move Logic) ---
+        function getEmptyCells() {
+            return gameState
+                .map((cell, index) => cell === '' ? index : null)
+                .filter(index => index !== null);
+        }
+        
+        function checkMove(boardState, player) {
+            for (let i = 0; i < winningConditions.length; i++) {
+                const [a, b, c] = winningConditions[i];
+                if (boardState[a] === player && boardState[b] === player && boardState[c] === player) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        function getAIMove() {
+            const emptyCells = getEmptyCells();
+            let move = null;
+            const aiPlayer = 'O';
+            const huPlayer = 'X';
+            
+            // 1. Cek Kemenangan
+            for (let i = 0; i < emptyCells.length; i++) {
+                let tempBoard = [...gameState];
+                tempBoard[emptyCells[i]] = aiPlayer;
+                if (checkMove(tempBoard, aiPlayer)) {
+                    move = emptyCells[i];
+                    break; 
+                }
+            }
+            
+            // 2. Cek Blokir
+            if (move === null) {
+                for (let i = 0; i < emptyCells.length; i++) {
+                    let tempBoard = [...gameState];
+                    tempBoard[emptyCells[i]] = huPlayer;
+                    if (checkMove(tempBoard, huPlayer)) {
+                        move = emptyCells[i];
+                        break; 
+                    }
+                }
+            }
+            
+            // 3. Peluang Kesalahan
+            if (move !== null && Math.random() < ERROR_CHANCE) {
+                const randomMoveIndex = Math.floor(Math.random() * emptyCells.length);
+                move = emptyCells[randomMoveIndex]; 
+            }
+            
+            // 4. Strategi Posisi
+            if (move === null) {
+                if (gameState[CENTER] === '') {
+                    move = CENTER;
+                } else {
+                    const availableCorners = CORNERS.filter(index => gameState[index] === '');
+                    if (availableCorners.length > 0) {
+                        const randomCornerIndex = Math.floor(Math.random() * availableCorners.length);
+                        move = availableCorners[randomCornerIndex];
+                    }
+                }
+            }
+            
+            // 5. Pilihan Terakhir: Gerakan Acak
+            if (move === null && emptyCells.length > 0) {
+                const randomMoveIndex = Math.floor(Math.random() * emptyCells.length);
+                move = emptyCells[randomMoveIndex];
+            }
+            
+            return move;
+        }
+
+        function aiTurn() {
+            if (!gameActive) return;
+
+            setTimeout(() => {
+                const moveIndex = getAIMove();
+                
+                if (moveIndex !== null) {
+                    const clickedCell = document.querySelector(`[data-index="${moveIndex}"]`);
+                    
+                    handleCellPlayed(clickedCell, moveIndex);
+                    
+                    if (!handleResultValidation()) {
+                        handlePlayerChange(); 
+                    }
+                }
+            }, 500); 
+        }
+
+        // --- FUNGSI KLIK MANUSIA ---
+        function handleCellClick(event) {
+            const clickedCell = event.target;
+            const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
+
+            if (gameState[clickedCellIndex] !== '' || !gameActive || currentPlayer === 'O') {
+                return;
+            }
+
+            handleCellPlayed(clickedCell, clickedCellIndex);
+            
+            if (!handleResultValidation()) {
+                handlePlayerChange();
+                aiTurn(); 
+            }
+        }
+
+        function handleRestartGame() {
+            gameActive = true;
+            currentPlayer = 'X';
+            gameState = ['', '', '', '', '', '', '', '', ''];
+            statusDisplay.innerHTML = `Giliran ${currentPlayer === 'X' ? 'X (Anda)' : 'O (AI)'}`;
+            document.querySelectorAll('.cell').forEach(cell => {
+                cell.innerHTML = '';
+                cell.classList.remove('win-cell');
+            });
+            
+            // Menyembunyikan tombol reset saat game dimulai
+            resetButton.classList.remove('show');
+            resetButton.classList.add('hide');
+        }
+
+        document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+        resetButton.addEventListener('click', handleRestartGame);
+    </script>
+</body>
+</html>
